@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.conecta4'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit Platform para ejecutar los tests
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.platform:junit-platform-suite'
+
+    // Cucumber y su integración con JUnit Platform
+    testImplementation platform('io.cucumber:cucumber-bom:7.15.0')
+    testImplementation 'io.cucumber:cucumber-java'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty("cucumber.junit-platform.naming-strategy", "long")
+}

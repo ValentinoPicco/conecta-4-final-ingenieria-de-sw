@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.conecta4.RunCucumberTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-07-26T17:05:08" hostname="valentino-notebook" time="0.038">
+  <properties/>
+  <testcase name="Juego Conecta 4 - Iniciar un nuevo juego" classname="com.conecta4.RunCucumberTest" time="0.038"/>
+  <system-out><![CDATA[
+Scenario: Iniciar un nuevo juego                                                             ?[90m# features/conecta4.feature:6?[0m
+  ?[32mGiven ?[0m?[32mque el juego ha sido iniciado?[0m                                                        ?[90m# com.conecta4.StepDefinitions.que_el_juego_ha_sido_iniciado()?[0m
+  ?[32mWhen ?[0m?[32mel jugador ?[0m?[32m?[1m1?[0m?[32m coloca una ficha en la columna ?[0m?[32m?[1m1?[0m                                         ?[90m# com.conecta4.StepDefinitions.el_jugador_coloca_una_ficha_en_la_columna(java.lang.Integer,java.lang.Integer)?[0m
+  ?[32mThen ?[0m?[32mel tablero debería mostrar la ficha del jugador ?[0m?[32m?[1m1?[0m?[32m en la fila inferior de la columna ?[0m?[32m?[1m1?[0m ?[90m# com.conecta4.StepDefinitions.el_tablero_deberia_mostrar_la_ficha_en_la_fila_inferior(java.lang.Integer,java.lang.Integer)?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
