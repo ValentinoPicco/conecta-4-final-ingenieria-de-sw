@@ -1,5 +1,7 @@
 package com.conecta4.tokens;
 
 public interface Token {
-    char getRepresentation();
+    String getRepresentation();
+    String getColor();
+    String getForm();
 }

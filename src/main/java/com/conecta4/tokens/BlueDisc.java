@@ -2,7 +2,17 @@ package com.conecta4.tokens;
 
 public class BlueDisc implements Token{
     @Override
-    public char getRepresentation() {
-        return 'B';
+    public String getRepresentation() {
+        return "B●";
+    }
+
+    @Override
+    public String getColor() {
+        return "Blue";
+    }
+
+    @Override
+    public String getForm() {
+        return "Disc";
     }
 }
