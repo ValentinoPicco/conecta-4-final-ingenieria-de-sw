@@ -2,41 +2,45 @@ package com.conecta4;
 
 import com.conecta4.games.GameFactory;
 import com.conecta4.terminations.Termination;
+import com.conecta4.ui.UI;
 
 public class GameController {
     Board board;
     Termination termination;
     GameFactory gameFactory;
+    UI ui;
     boolean turn;
     boolean can;
 
-    public GameController(GameFactory gameFactory, int rows, int columns) {
+    public GameController(GameFactory gameFactory, int rows, int columns, UI ui) {
         board = new Board(rows, columns);
         this.gameFactory = gameFactory;
+        this.ui = ui;
         termination = gameFactory.createTerminationStrategy();
     }
 
-    // cambiar todos los 0 por la columna que se pida
     public void play(){
-        // func diciendo que empieza player 1
         while (!termination.endStrategy()) {
-            // mostrar tablero
-            // pedir columna
-            can = canInsert(0);
+            turnTitle();
+            ui.show(board.toString()); // hacer el toString
+            ui.show("¿En que columna quiere colocar la ficha?");
+            int columnInput = ui.intRequest();
+            can = canInsert(columnInput);
             while (!can) {
-                // pedir columna nuevamente
-                can = canInsert(0);
+                columnInput = ui.intRequest();
+                can = canInsert(columnInput);
             }
-            insertToken(0, turn);
+            String tokenInput = "asignar desde ui";
+            insertToken(columnInput, tokenInput);
             turn = !turn;
         }
         winTitle();
     }
 
-    private void insertToken(int c, boolean turn){
+    private void insertToken(int c, String tokenInput){
         int r = searchRow(c);
-        if (turn) board.insertToken(r, c, gameFactory.createToken("B")); // cambiar este if para que se adapte a todos los token
-        else board.insertToken(r, c, gameFactory.createToken("R"));
+        if (turn) board.insertToken(r, c, gameFactory.createToken(tokenInput));
+        else board.insertToken(r, c, gameFactory.createToken(tokenInput));
     }
 
     private int searchRow(int c){
@@ -55,12 +59,19 @@ public class GameController {
         return true;
     }
 
-    // esto va en ui
     private void winTitle(){
         if (turn){
-            System.out.println("Player 2 Win's");
+            ui.show("Player 2 Win's");
         } else {
-            System.out.println("Player 1 Win's");
+            ui.show("Player 1 Win's");
+        }
+    }
+
+    private void turnTitle(){
+        if (turn){
+            ui.show("Le toca al Jugador 2");
+        } else {
+            ui.show("Le toca al Jugador 1");
         }
     }
 }
