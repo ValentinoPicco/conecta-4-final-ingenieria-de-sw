@@ -2,7 +2,17 @@ package com.conecta4.tokens;
 
 public class RedDisc implements Token{
     @Override
-    public char getRepresentation() {
-        return 'R';
+    public String getRepresentation() {
+        return "R●";
+    }
+
+    @Override
+    public String getColor() {
+        return "Red";
+    }
+
+    @Override
+    public String getForm() {
+        return "Disc";
     }
 }

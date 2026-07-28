@@ -1,18 +1,18 @@
 package com.conecta4.tokens;
 
-public class NullToken implements Token{
+public class RedToken implements Token{
     @Override
     public String getRepresentation() {
-        return " ";
+        return "R";
     }
 
     @Override
     public String getColor() {
-        return "No hay color"; // poner en ingles
+        return "Red";
     }
 
     @Override
     public String getForm() {
-        return "El vacio no tiene forma"; // poner en ingles
+        return "Classic";
     }
 }

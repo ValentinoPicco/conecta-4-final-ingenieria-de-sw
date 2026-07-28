@@ -1,6 +1,6 @@
 package com.conecta4;
 
-import com.conecta4.tokens.NullToken;
+import com.conecta4.tokens.EmptyToken;
 import com.conecta4.tokens.Token;
 
 public class Board {
@@ -17,8 +17,24 @@ public class Board {
     private void initialize(){
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                board[i][j] = new NullToken();
+                board[i][j] = new EmptyToken();
             }
         }
+    }
+
+    public void insertToken(int r, int c, Token token){
+        board[r][c] = token;
+    }
+
+    public Token[][] getBoard() {
+        return board;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
     }
 }
