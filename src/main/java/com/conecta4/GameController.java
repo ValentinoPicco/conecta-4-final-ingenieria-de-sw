@@ -2,7 +2,6 @@ package com.conecta4;
 
 import com.conecta4.games.GameFactory;
 import com.conecta4.terminations.Termination;
-import com.conecta4.tokens.EmptyToken;
 
 public class GameController {
     Board board;
