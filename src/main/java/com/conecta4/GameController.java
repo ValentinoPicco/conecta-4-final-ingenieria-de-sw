@@ -87,7 +87,7 @@ public class GameController {
     }
 
     private void initTurn(){
-        ui.show(board.toString());
+        ui.showBoard(board.getBoard(), board.getRows(), board.getColumns()  );
         ui.show("¿En que columna quiere colocar la ficha?");
         columnInput = ui.intRequest();
     }

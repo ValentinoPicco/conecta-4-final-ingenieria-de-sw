@@ -8,12 +8,9 @@ public class ColorsAndFormsTermination extends Termination {
     protected boolean evaluateLine(Token[][] matrix, int r, int c, int rowDir, int colDir, int n) {
         String baseColor = matrix[r][c].getColor();
         String baseForm = matrix[r][c].getForm();
-        
-        boolean colorValid = baseColor != null && !baseColor.trim().isEmpty();
-        boolean formValid = baseForm != null && !baseForm.trim().isEmpty();
 
-        boolean allSameColor = colorValid;
-        boolean allSameForm = formValid;
+        boolean allSameColor = true;
+        boolean allSameForm = true;
 
         for (int i = 1; i < n; i++) {
             Token next = matrix[r + (i * rowDir)][c + (i * colDir)];
