@@ -6,7 +6,7 @@ import java.util.Scanner;
 import com.conecta4.tokens.Token;
 
 public class ConsoleUI implements UI{
-    Scanner scanner;
+    private Scanner scanner;
 
     public ConsoleUI(Scanner sc){
         scanner = sc;
