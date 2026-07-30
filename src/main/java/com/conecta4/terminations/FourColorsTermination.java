@@ -1,9 +1,29 @@
 package com.conecta4.terminations;
 
-public class FourColorsTermination implements Termination{
+import com.conecta4.tokens.Token;
+
+public class FourColorsTermination extends Termination {
+
     @Override
-    public boolean endStrategy() {
-        // TODO Auto-generated method stub
-        return false;
+    protected boolean evaluateLine(Token[][] matrix, int r, int c, int rowDir, int colDir, int n) {
+        String baseColor = matrix[r][c].getColor();
+
+        for (int i = 1; i < n; i++) {
+            String nextColor = matrix[r + (i * rowDir)][c + (i * colDir)].getColor();
+            if (!baseColor.equals(nextColor)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    protected int getWinCondition() {
+        return 4;
+    }
+
+    @Override
+    protected boolean allowDiagonals() {
+        return true;
     }
 }

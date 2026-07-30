@@ -1,7 +1,4 @@
 Feature: Juego Conecta 4
-  Como jugador
-  Quiero poder jugar al Conecta 4
-  Para poder divertirme
 
   Scenario: Iniciar un nuevo juego
     Given que el juego ha sido iniciado

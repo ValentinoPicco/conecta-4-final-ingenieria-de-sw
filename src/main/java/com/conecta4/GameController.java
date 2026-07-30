@@ -3,6 +3,7 @@ package com.conecta4;
 import com.conecta4.games.GameFactory;
 import com.conecta4.terminations.Termination;
 import com.conecta4.ui.UI;
+import java.util.List;
 
 public class GameController {
     Board board;
@@ -11,6 +12,7 @@ public class GameController {
     UI ui;
     boolean turn;
     boolean can;
+    int columnInput;
 
     public GameController(GameFactory gameFactory, int rows, int columns, UI ui) {
         board = new Board(rows, columns);
@@ -20,17 +22,18 @@ public class GameController {
     }
 
     public void play(){
-        while (!termination.endStrategy()) {
+        while (!termination.endStrategy(board)) {
             turnTitle();
-            ui.show(board.toString()); // hacer el toString
-            ui.show("¿En que columna quiere colocar la ficha?");
-            int columnInput = ui.intRequest();
+            initTurn();
             can = canInsert(columnInput);
             while (!can) {
+                ui.show("Seleccione una columna válida");
                 columnInput = ui.intRequest();
                 can = canInsert(columnInput);
             }
-            String tokenInput = "asignar desde ui";
+            ui.show("Seleccione una ficha:");
+            ui.showList(tokensOptions());
+            String tokenInput = ui.tokenRequest();
             insertToken(columnInput, tokenInput);
             turn = !turn;
         }
@@ -74,4 +77,20 @@ public class GameController {
             ui.show("Le toca al Jugador 1");
         }
     }
+
+    private List<String> tokensOptions(){
+        if (turn){
+            return gameFactory.getP2Options();
+        } else {
+            return gameFactory.getP1Options();
+        }
+    }
+
+    private void initTurn(){
+        ui.show(board.toString());
+        ui.show("¿En que columna quiere colocar la ficha?");
+        columnInput = ui.intRequest();
+    }
+
+
 }

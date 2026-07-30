@@ -8,11 +8,11 @@ public class EmptyToken implements Token{
 
     @Override
     public String getColor() {
-        return "No hay color"; // poner en ingles
+        return "No color"; 
     }
 
     @Override
     public String getForm() {
-        return "El vacio no tiene forma"; // poner en ingles
+        return "The void has no form";
     }
 }

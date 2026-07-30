@@ -3,7 +3,7 @@ package com.conecta4.tokens;
 public class RedDisc implements Token{
     @Override
     public String getRepresentation() {
-        return "R●";
+        return "RD";
     }
 
     @Override
