@@ -6,13 +6,13 @@ import com.conecta4.ui.UI;
 import java.util.List;
 
 public class GameController {
-    Board board;
-    Termination termination;
-    GameFactory gameFactory;
-    UI ui;
-    boolean turn;
-    boolean can;
-    int columnInput;
+    private Board board;
+    private Termination termination;
+    private GameFactory gameFactory;
+    private UI ui;
+    private boolean turn;
+    private boolean can;
+    private int columnInput;
 
     public GameController(GameFactory gameFactory, int rows, int columns, UI ui) {
         board = new Board(rows, columns);
