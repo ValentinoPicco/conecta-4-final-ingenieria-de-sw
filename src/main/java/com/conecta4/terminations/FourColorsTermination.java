@@ -4,22 +4,21 @@ import com.conecta4.tokens.Token;
 
 public class FourColorsTermination extends Termination {
 
+    public FourColorsTermination(){
+        super.winCondition = 4;
+    }
+
     @Override
-    protected boolean evaluateLine(Token[][] matrix, int r, int c, int rowDir, int colDir, int n) {
+    protected boolean evaluateLine(Token[][] matrix, int r, int c, int rowDir, int colDir) {
         String baseColor = matrix[r][c].getColor();
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < winCondition; i++) {
             String nextColor = matrix[r + (i * rowDir)][c + (i * colDir)].getColor();
             if (!baseColor.equals(nextColor)) {
                 return false;
             }
         }
         return true;
-    }
-
-    @Override
-    protected int getWinCondition() {
-        return 4;
     }
 
     @Override
