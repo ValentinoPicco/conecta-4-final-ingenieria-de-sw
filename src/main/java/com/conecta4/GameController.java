@@ -22,7 +22,7 @@ public class GameController {
     }
 
     public void play(){
-        while (!termination.endStrategy(board)) {
+        while (!termination.endStrategy(board.getBoard())) {
             turnTitle();
             initTurn();
             can = canInsert(columnInput);
@@ -87,7 +87,7 @@ public class GameController {
     }
 
     private void initTurn(){
-        ui.showBoard(board.getBoard(), board.getRows(), board.getColumns()  );
+        ui.showBoard(board.getBoard());
         ui.show("¿En que columna quiere colocar la ficha?");
         columnInput = ui.intRequest();
     }

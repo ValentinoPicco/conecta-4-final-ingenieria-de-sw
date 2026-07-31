@@ -1,6 +1,5 @@
 package com.conecta4.terminations;
 
-import com.conecta4.Board;
 import com.conecta4.tokens.Token;
 
 public abstract class Termination {
@@ -8,10 +7,9 @@ public abstract class Termination {
     protected abstract int getWinCondition();
     protected abstract boolean allowDiagonals();
 
-    public boolean endStrategy(Board board) {
-        Token[][] matrix = board.getBoard();
-        int rows = board.getRows();
-        int cols = board.getColumns();
+    public boolean endStrategy(Token[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
         int n = getWinCondition();
 
         for (int r = 0; r < rows; r++) {

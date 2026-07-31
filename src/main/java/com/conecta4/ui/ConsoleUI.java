@@ -38,7 +38,9 @@ public class ConsoleUI implements UI{
     }
 
     @Override
-    public void showBoard(Token[][] board, int rows, int columns) {
+    public void showBoard(Token[][] board) {
+        int rows = board.length;
+        int columns = board[0].length;
         StringBuilder sb = new StringBuilder();
         
         // Numeración de columnas

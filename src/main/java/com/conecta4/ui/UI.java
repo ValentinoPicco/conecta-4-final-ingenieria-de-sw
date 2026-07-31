@@ -9,5 +9,5 @@ public interface UI {
     String tokenRequest();
     void show(String print);
     void showList(List<String> tokens);
-    void showBoard(Token[][] board, int rows, int colums);
+    void showBoard(Token[][] board);
 }
