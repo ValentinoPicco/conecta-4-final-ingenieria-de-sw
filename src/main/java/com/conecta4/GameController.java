@@ -28,12 +28,15 @@ public class GameController {
             can = canInsert(columnInput);
             while (!can) {
                 ui.show("Seleccione una columna válida");
-                columnInput = ui.intRequest();
+                columnInput = ui.intRequest() - 1;
                 can = canInsert(columnInput);
             }
             ui.show("Seleccione una ficha:");
-            ui.showList(tokensOptions());
-            String tokenInput = ui.tokenRequest();
+            List<String> options = tokensOptions();
+            ui.showList(options);
+            int tokenIndex = ui.intRequest();
+            String tokenInput = options.get(tokenIndex - 1);
+            
             insertToken(columnInput, tokenInput);
             turn = !turn;
         }
@@ -47,15 +50,16 @@ public class GameController {
     }
 
     private int searchRow(int c){
-        int i = 0;
-        while (i < board.getRows() && !board.getBoard()[i][c].getRepresentation().equals(" ")) {
-            i++;
+        for (int i = board.getRows() - 1; i >= 0; i--) {
+            if (board.getBoard()[i][c].getRepresentation().equals(" ")) {
+                return i;
+            }
         }
-        return i - 1;
+        return -1;
     }
 
     private boolean canInsert(int c){
-        if (c >= board.getColumns() || c < 1) // No se puede insertar una ficha fuera del tablero
+        if (c >= board.getColumns() || c < 0) // No se puede insertar una ficha fuera del tablero
             return false;
         if (!board.getBoard()[0][c].getRepresentation().equals(" ")) // No se puede insertar una ficha en una columna llena
             return false;
@@ -64,9 +68,9 @@ public class GameController {
 
     private void winTitle(){
         if (turn){
-            ui.show("Player 2 Win's");
-        } else {
             ui.show("Player 1 Win's");
+        } else {
+            ui.show("Player 2 Win's");
         }
     }
 
@@ -89,7 +93,7 @@ public class GameController {
     private void initTurn(){
         ui.showBoard(board.getBoard());
         ui.show("¿En que columna quiere colocar la ficha?");
-        columnInput = ui.intRequest();
+        columnInput = ui.intRequest() - 1;
     }
 
 

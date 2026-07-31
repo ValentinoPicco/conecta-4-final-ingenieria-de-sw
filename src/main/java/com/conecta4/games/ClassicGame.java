@@ -20,7 +20,7 @@ public class ClassicGame extends GameFactory{
         super.p1Options = new LinkedList<>();
         p1Options.add("B");
         super.p2Options = new LinkedList<>();
-        p1Options.add("R");
+        p2Options.add("R");
     }
 
     @Override

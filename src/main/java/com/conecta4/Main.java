@@ -29,7 +29,7 @@ public class Main {
             switch (op) {
                 case 1:
                     gameController = new GameController(new ClassicGame(), rows, columns, ui);
-                    start = false;
+                    start = true;
                     break;
             
                 default:

@@ -33,8 +33,8 @@ public class ConsoleUI implements UI{
         int i = 1;
         for (String token : tokens) {
             System.out.println(i + ". " + token);
+            i++;
         }
-        i++;
     }
 
     @Override
