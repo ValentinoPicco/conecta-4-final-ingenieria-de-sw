@@ -18,7 +18,7 @@ public class GameController {
         board = new Board(rows, columns);
         this.gameFactory = gameFactory;
         this.ui = ui;
-        termination = gameFactory.createTerminationStrategy();
+        termination = gameFactory.createTermination();
     }
 
     public void play(){
@@ -45,8 +45,7 @@ public class GameController {
 
     private void insertToken(int c, String tokenInput){
         int r = searchRow(c);
-        if (turn) board.insertToken(r, c, gameFactory.createToken(tokenInput));
-        else board.insertToken(r, c, gameFactory.createToken(tokenInput));
+        board.insertToken(r, c, gameFactory.createToken(tokenInput));
     }
 
     private int searchRow(int c){

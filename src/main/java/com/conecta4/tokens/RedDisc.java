@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class RedDisc implements Token{
+public class RedDisc implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "RD";

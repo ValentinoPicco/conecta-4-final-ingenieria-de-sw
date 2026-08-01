@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class RedTriangule implements Token{
+public class RedTriangule implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "RT";

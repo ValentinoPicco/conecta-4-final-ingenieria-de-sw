@@ -2,9 +2,9 @@ package com.conecta4.terminations;
 
 import com.conecta4.tokens.Token;
 
-public class NTokensNoDiagonalTermination extends Termination{
+public class NTokensNoDiagonalTerminationStrategy extends TerminationStrategy{
 
-    public NTokensNoDiagonalTermination(int n) {                                                                      
+    public NTokensNoDiagonalTerminationStrategy(int n) {                                                                      
         super.winCondition = n;                                                                                         
     }
     @Override

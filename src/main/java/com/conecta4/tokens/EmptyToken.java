@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class EmptyToken implements Token{
+public class EmptyToken implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return " ";

@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class BlueDisc implements Token{
+public class BlueDisc implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "BD";

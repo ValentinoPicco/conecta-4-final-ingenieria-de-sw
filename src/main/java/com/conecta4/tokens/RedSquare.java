@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class RedSquare implements Token{
+public class RedSquare implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "RS";

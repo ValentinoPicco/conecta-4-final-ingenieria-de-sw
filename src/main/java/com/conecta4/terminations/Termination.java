@@ -2,12 +2,12 @@ package com.conecta4.terminations;
 
 import com.conecta4.tokens.Token;
 
-public abstract class Termination {
+public class Termination {
+    TerminationStrategy terminationStrategy;
 
-    int winCondition;
-
-    protected abstract boolean evaluateLine(Token[][] matrix, int r, int c, int rowDir, int colDir);
-    protected abstract boolean allowDiagonals();
+    public Termination(TerminationStrategy terminationStrategy){
+        this.terminationStrategy = terminationStrategy;
+    }
 
     public boolean endStrategy(Token[][] matrix) {
         int rows = matrix.length;
@@ -22,15 +22,15 @@ public abstract class Termination {
                 }
 
                 // Horizontal
-                if (c + winCondition - 1 < cols && evaluateLine(matrix, r, c, 0, 1)) return true;
+                if (c + terminationStrategy.getWinCondition() - 1 < cols && terminationStrategy.evaluateLine(matrix, r, c, 0, 1)) return true;
                 
                 // Vertical
-                if (r + winCondition - 1 < rows && evaluateLine(matrix, r, c, 1, 0)) return true;
+                if (r + terminationStrategy.getWinCondition() - 1 < rows && terminationStrategy.evaluateLine(matrix, r, c, 1, 0)) return true;
 
                 // Diagonales
-                if (allowDiagonals()) {
-                    if (r + winCondition - 1 < rows && c + winCondition - 1 < cols && evaluateLine(matrix, r, c, 1, 1)) return true;
-                    if (r - winCondition + 1 >= 0 && c + winCondition - 1 < cols && evaluateLine(matrix, r, c, -1, 1)) return true;
+                if (terminationStrategy.allowDiagonals()) {
+                    if (r + terminationStrategy.getWinCondition() - 1 < rows && c + terminationStrategy.getWinCondition() - 1 < cols && terminationStrategy.evaluateLine(matrix, r, c, 1, 1)) return true;
+                    if (r - terminationStrategy.getWinCondition() + 1 >= 0 && c + terminationStrategy.getWinCondition() - 1 < cols && terminationStrategy.evaluateLine(matrix, r, c, -1, 1)) return true;
                 }
             }
         }

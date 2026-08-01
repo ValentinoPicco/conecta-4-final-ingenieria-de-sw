@@ -17,7 +17,7 @@ public class Board {
     private void initialize(){
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                board[i][j] = new EmptyToken();
+                board[i][j] = new Token(new EmptyToken());
             }
         }
     }

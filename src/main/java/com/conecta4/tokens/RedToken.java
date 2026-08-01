@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class RedToken implements Token{
+public class RedToken implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "R";

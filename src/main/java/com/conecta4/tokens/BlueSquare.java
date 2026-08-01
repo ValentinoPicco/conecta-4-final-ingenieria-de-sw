@@ -1,6 +1,6 @@
 package com.conecta4.tokens;
 
-public class BlueSquare implements Token{
+public class BlueSquare implements TokenStrategy{
     @Override
     public String getRepresentation() {
         return "BS";

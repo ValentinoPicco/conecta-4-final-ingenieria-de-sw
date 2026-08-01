@@ -2,7 +2,7 @@ package com.conecta4.games;
 
 import java.util.LinkedList;
 
-import com.conecta4.terminations.FourColorsTermination;
+import com.conecta4.terminations.FourColorsTerminationStrategy;
 import com.conecta4.terminations.Termination;
 import com.conecta4.tokens.BlueToken;
 import com.conecta4.tokens.RedToken;
@@ -24,14 +24,14 @@ public class ClassicGame extends GameFactory{
     }
 
     @Override
-    public Termination createTerminationStrategy() {
-        return new FourColorsTermination();
+    public Termination createTermination() {
+        return new Termination(new FourColorsTerminationStrategy());
     }
 
     @Override
     public Token createToken(String representation) {
-        if (representation.equals("R")) return new RedToken();
-        else if (representation.equals("B")) return new BlueToken();
+        if (representation.equals("R")) return new Token(new RedToken());
+        else if (representation.equals("B")) return new Token(new BlueToken());
         else throw new IllegalArgumentException();
     }
 }

@@ -2,9 +2,9 @@ package com.conecta4.terminations;
 
 import com.conecta4.tokens.Token;
 
-public class FourColorsOrFourFormsTermination extends Termination {
+public class FourColorsOrFourFormsTerminationStrategy extends TerminationStrategy {
 
-    public FourColorsOrFourFormsTermination(){
+    public FourColorsOrFourFormsTerminationStrategy(){
         super.winCondition = 4;
     }
 
