@@ -9,7 +9,7 @@ public class Termination {
         this.terminationStrategy = terminationStrategy;
     }
 
-    public boolean endStrategy(Token[][] matrix) {
+    public boolean end(Token[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
 

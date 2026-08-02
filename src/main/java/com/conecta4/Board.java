@@ -37,4 +37,12 @@ public class Board {
     public int getColumns() {
         return columns;
     }
+
+    public boolean canInsert(int c){
+        if (c >= columns || c < 0) // No se puede insertar una ficha fuera del tablero
+            return false;
+        if (!board[0][c].getRepresentation().equals(" ")) // No se puede insertar una ficha en una columna llena
+            return false;
+        return true;
+    }
 }
