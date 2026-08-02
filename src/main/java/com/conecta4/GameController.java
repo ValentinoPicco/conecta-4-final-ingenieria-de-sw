@@ -18,17 +18,15 @@ public class GameController {
             ui.showBoard(gameState.getBoard());
             turnTitle();
             int columnInput = initTurn();
-            boolean can = gameState.canInsert(columnInput);
-            while (!can) {
+            while (!gameState.canInsert(columnInput)) {
                 ui.show("Seleccione una columna válida");
                 columnInput = ui.intRequest() - 1;
-                can = gameState.canInsert(columnInput);
             }
             ui.show("Seleccione una ficha:");
             List<String> options = gameState.getCurrentPlayerOptions();
             ui.showList(options);
             int tokenIndex = ui.intRequest();
-            while (tokenIndex < 1 || tokenIndex > options.size()) {
+            while (gameState.validTokenIndex(tokenIndex)) {
                 ui.show("Seleccione una ficha válida");
                 ui.showList(options);
                 tokenIndex = ui.intRequest();

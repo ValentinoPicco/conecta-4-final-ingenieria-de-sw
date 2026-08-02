@@ -53,6 +53,10 @@ public class GameState {
         return board.canInsert(c);
     }
 
+    public boolean validTokenIndex(int index) {
+        return index >= 1 && index <= getCurrentPlayerOptions().size();
+    }
+
     private int searchRow(int c){
         for (int i = board.getRows() - 1; i >= 0; i--) {
             if (board.getBoard()[i][c].getRepresentation().equals(" ")) {
