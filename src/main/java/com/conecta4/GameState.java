@@ -12,10 +12,11 @@ public class GameState {
     private GameFactory gameFactory;
     private boolean turn;
 
-    public GameState(Board board, GameFactory gameFactory){
+    public GameState(Board board, GameFactory gameFactory, int n){
+        if (n < 2) n = 2;
         this.board = board;
         this.gameFactory = gameFactory;
-        termination = gameFactory.createTermination();
+        termination = gameFactory.createTermination(n);
         turn = false;
     }
 

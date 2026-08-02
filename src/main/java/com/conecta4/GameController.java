@@ -8,13 +8,14 @@ public class GameController {
     private GameState gameState;
     private UI ui;
 
-    public GameController(GameFactory gameFactory, Board board, UI ui) {
-        gameState = new GameState(board, gameFactory);
+    public GameController(GameFactory gameFactory, Board board, UI ui, int n) {
+        gameState = new GameState(board, gameFactory, n);
         this.ui = ui;
     }
 
     public void play(){
         while (gameState.inGame()) {
+            ui.showBoard(gameState.getBoard());
             turnTitle();
             int columnInput = initTurn();
             boolean can = gameState.canInsert(columnInput);
@@ -27,11 +28,17 @@ public class GameController {
             List<String> options = gameState.getCurrentPlayerOptions();
             ui.showList(options);
             int tokenIndex = ui.intRequest();
+            while (tokenIndex < 1 || tokenIndex > options.size()) {
+                ui.show("Seleccione una ficha válida");
+                ui.showList(options);
+                tokenIndex = ui.intRequest();
+            }
             String tokenInput = options.get(tokenIndex - 1);
             
             gameState.insertToken(columnInput, tokenInput);
             gameState.switchTurn();
         }
+        ui.showBoard(gameState.getBoard());
         winTitle();
     }
 
@@ -41,7 +48,6 @@ public class GameController {
         } else {
             ui.show("Player 2 Win's");
         }
-        ui.showBoard(gameState.getBoard());
     }
 
     private void turnTitle(){
@@ -53,7 +59,6 @@ public class GameController {
     }
 
     private int initTurn(){
-        ui.showBoard(gameState.getBoard());
         ui.show("¿En que columna quiere colocar la ficha?");
         return ui.intRequest() - 1;
     }

@@ -9,7 +9,7 @@ public abstract class GameFactory {
     List<String> p1Options;
     List<String> p2Options;
 
-    public abstract Termination createTermination();
+    public abstract Termination createTermination(int n);
     public abstract Token createToken(String representation);
 
     public List<String> getP1Options(){

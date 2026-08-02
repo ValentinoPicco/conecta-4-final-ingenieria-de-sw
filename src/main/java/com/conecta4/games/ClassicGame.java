@@ -24,7 +24,7 @@ public class ClassicGame extends GameFactory{
     }
 
     @Override
-    public Termination createTermination() {
+    public Termination createTermination(int n) {
         return new Termination(new FourColorsTerminationStrategy());
     }
 
