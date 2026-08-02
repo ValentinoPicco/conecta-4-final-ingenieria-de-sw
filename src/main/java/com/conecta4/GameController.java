@@ -17,11 +17,11 @@ public class GameController {
         while (gameState.inGame()) {
             turnTitle();
             int columnInput = initTurn();
-            boolean can = canInsert(columnInput);
+            boolean can = gameState.canInsert(columnInput);
             while (!can) {
                 ui.show("Seleccione una columna válida");
                 columnInput = ui.intRequest() - 1;
-                can = canInsert(columnInput);
+                can = gameState.canInsert(columnInput);
             }
             ui.show("Seleccione una ficha:");
             List<String> options = gameState.getCurrentPlayerOptions();
@@ -29,18 +29,10 @@ public class GameController {
             int tokenIndex = ui.intRequest();
             String tokenInput = options.get(tokenIndex - 1);
             
-            insertToken(columnInput, tokenInput);
+            gameState.insertToken(columnInput, tokenInput);
             gameState.switchTurn();
         }
         winTitle();
-    }
-
-    private void insertToken(int c, String tokenInput){
-        gameState.insertToken(c, tokenInput);
-    }
-
-    private boolean canInsert(int c){
-        return gameState.canInsert(c);
     }
 
     private void winTitle(){
