@@ -8,8 +8,8 @@ public class GameController {
     private GameState gameState;
     private UI ui;
 
-    public GameController(GameFactory gameFactory, int rows, int columns, UI ui) {
-        gameState = new GameState(new Board(rows, columns), gameFactory);
+    public GameController(GameFactory gameFactory, Board board, UI ui) {
+        gameState = new GameState(board, gameFactory);
         this.ui = ui;
     }
 

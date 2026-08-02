@@ -28,7 +28,7 @@ public class Main {
             op = ui.intRequest();
             switch (op) {
                 case 1:
-                    gameController = new GameController(new ClassicGame(), rows, columns, ui);
+                    gameController = new GameController(new ClassicGame(), new Board(rows, columns), ui);
                     start = true;
                     break;
             
