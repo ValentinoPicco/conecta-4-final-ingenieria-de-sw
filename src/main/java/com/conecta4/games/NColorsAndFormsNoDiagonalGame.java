@@ -3,7 +3,7 @@ package com.conecta4.games;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.conecta4.terminations.NColorsAndFormsTerminationStrategy;
+import com.conecta4.terminations.NColorsAndFormsNoDiagonalTerminationStrategy;
 import com.conecta4.terminations.Termination;
 import com.conecta4.tokens.BlueDisc;
 import com.conecta4.tokens.BlueSquare;
@@ -23,7 +23,7 @@ public class NColorsAndFormsNoDiagonalGame extends GameFactory{
 
     @Override
     public Termination createTermination(int n) {
-        return new Termination(new NColorsAndFormsTerminationStrategy(n));
+        return new Termination(new NColorsAndFormsNoDiagonalTerminationStrategy(n));
     }
 
     @Override

@@ -1,5 +1,0 @@
-
-ÑScenario: Iniciar un nuevo juego                                                             [90m# features/conecta4.feature:6[0m
-∑  [32mGiven [0m[32mque el juego ha sido iniciado[0m                                                        [90m# com.conecta4.StepDefinitions.que_el_juego_ha_sido_iniciado()[0m
-â  [32mWhen [0m[32mel jugador [0m[32m[1m1[0m[32m coloca una ficha en la columna [0m[32m[1m1[0m                                         [90m# com.conecta4.StepDefinitions.el_jugador_coloca_una_ficha_en_la_columna(java.lang.Integer,java.lang.Integer)[0m
-ò  [32mThen [0m[32mel tablero deber√≠a mostrar la ficha del jugador [0m[32m[1m1[0m[32m en la fila inferior de la columna [0m[32m[1m1[0m [90m# com.conecta4.StepDefinitions.el_tablero_deberia_mostrar_la_ficha_en_la_fila_inferior(java.lang.Integer,java.lang.Integer)[0m

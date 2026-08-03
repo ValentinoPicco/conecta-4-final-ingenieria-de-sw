@@ -26,7 +26,7 @@ public class GameController {
             List<String> options = gameState.getCurrentPlayerOptions();
             ui.showList(options);
             int tokenIndex = ui.intRequest();
-            while (gameState.validTokenIndex(tokenIndex)) {
+            while (!gameState.validTokenIndex(tokenIndex)) {
                 ui.show("Seleccione una ficha válida");
                 ui.showList(options);
                 tokenIndex = ui.intRequest();
