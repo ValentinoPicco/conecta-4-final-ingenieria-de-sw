@@ -3,7 +3,7 @@ package com.conecta4.terminations;
 import com.conecta4.tokens.Token;
 
 public class Termination {
-    TerminationStrategy terminationStrategy;
+    private TerminationStrategy terminationStrategy;
 
     public Termination(TerminationStrategy terminationStrategy){
         this.terminationStrategy = terminationStrategy;

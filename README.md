@@ -1,5 +1,24 @@
 # conecta-4-final-ingenieria-de-sw
 
+Este es un proyecto individual para el final regular de la materia de Ingeniería de Software.
+
+## Comandos de Ejecución
+
+### Para Jugar (Ejecutar el Main)
+./gradlew run --console=plain -q
+
+### Para correr los test (Sin cobertura)
+./gradlew test
+
+### Para correr los test (Con cobertura)
+./gradlew test jacocoTestReport
+
+Luego de usar este último comando puede encontrar el reporte en `build/jacocoHtml/index.html`
+
+## Diagrama de Clases
+
+![Diagrama de clases](diagrama-de-clases.svg)
+
 ## Ejercicio 3 — Particionado del espacio de entradas
 
 ### Funcionalidad 1: Evaluación de terminación (`Termination.end`)

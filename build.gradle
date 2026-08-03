@@ -1,6 +1,15 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
+}
+
+application {
+    mainClass = 'com.conecta4.Main'
+}
+
+run {
+    standardInput = System.in
 }
 
 group = 'com.conecta4'
