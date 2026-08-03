@@ -42,9 +42,9 @@ public class GameController {
 
     private void winTitle(){
         if (gameState.getTurn()){
-            ui.show("Player 1 Win's");
+            ui.show("¡Gana el Jugador 1!");
         } else {
-            ui.show("Player 2 Win's");
+            ui.show("¡Gana el Jugador 2!");
         }
     }
 

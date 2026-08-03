@@ -27,12 +27,12 @@ public class Main {
         
         do {
             ui.show("""
-            Selecciona un modo de juego:\n
-            1. Conecta 4 Clasico\n
-            2. Conecta 4 Formas\n
-            3. Conecta 4 Colores o Formas\n
-            4. Conecta N Colores y Formas\n
-            5. Conecta N Colores y Formas (SIN DIAGONALES)\n
+            Selecciona un modo de juego:
+            1. Conecta 4 Clasico
+            2. Conecta 4 Formas
+            3. Conecta 4 Colores o Formas
+            4. Conecta N Colores y Formas
+            5. Conecta N Colores y Formas (SIN DIAGONALES)
             """);
             op = ui.intRequest();
             switch (op) {

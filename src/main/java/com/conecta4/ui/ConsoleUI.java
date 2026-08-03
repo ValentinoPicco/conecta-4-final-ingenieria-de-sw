@@ -12,7 +12,6 @@ public class ConsoleUI implements UI{
         scanner = sc;
     }
 
-    // mejorables
     @Override
     public int intRequest() {
         return scanner.nextInt();

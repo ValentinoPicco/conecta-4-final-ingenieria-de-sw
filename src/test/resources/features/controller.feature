@@ -23,4 +23,4 @@ Feature: Flujo completo del GameController
       | 1 |
     When Se ejecuta el metodo play del GameController
     Then El juego termina
-    And La UI mostro que gano el "Player 1"
+    And La UI mostro que gano el "Jugador 1"

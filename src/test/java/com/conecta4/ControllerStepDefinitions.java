@@ -65,7 +65,7 @@ public class ControllerStepDefinitions {
 
     @Then("La UI mostro que gano el {string}")
     public void la_ui_mostro_que_gano(String ganador) {
-        String mensajeEsperado = ganador.equals("Player 1") ? "Player 1 Win's" : "Player 2 Win's";
+        String mensajeEsperado = ganador.equals("Jugador 1") ? "¡Gana el Jugador 1!" : "¡Gana el Jugador 2!";
         
         // Verificamos que el mock haya recibido la llamada 'show' con el mensaje esperado
         verify(mockUI, atLeastOnce()).show(mensajeEsperado);
