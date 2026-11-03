@@ -15,10 +15,6 @@ Este es un proyecto individual para el final regular de la materia de Ingenierí
 
 Luego de usar este último comando puede encontrar el reporte en `build/jacocoHtml/index.html`
 
-## Diagrama de Clases
-
-![Diagrama de clases](diagrama-de-clases.svg)
-
 ## Ejercicio 3 — Particionado del espacio de entradas
 
 ### Funcionalidad 1: Evaluación de terminación (`Termination.end`)
